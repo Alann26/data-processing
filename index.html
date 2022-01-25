@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/data-processing.css" />
  </head>
  <body>
      <header>
@@ -20,14 +21,47 @@
      </header>
      
    <main class="wrapper">
+
+    <p>This page demonstrates data processing of
+        query string data with client-side JavaScript.Upon submission, the cart items are
+         added and the Shipping Info is processed using title case.
+     </p>
+
+       <div id="output">
        <form method="get" action="" class="main-form">
+           <h3>Buy a widget!</h3>
+           <div id="widgets">
+            <div>
+                <b>Widget</b><br />
+                <p>Our Widgets are spring loaded and need no batteries!</p>
+                <p>At $3.99 they're a bargain!</p>
+                <p><label><input type="checkbox" name="cart" value="Widget" /> Add to Cart</label></p>
+                <div class="pic"><img src="images/widget.png" /></div>
+            </div>
+            <div>
+                <b>Sprocket</b><br />
+                <p>Our Sprockets are well made and hold up to extreme pressure!</p>
+                <p>They only cost $5.99!</p>
+                <p><label><input type="checkbox" name="cart" value="Sprocket" /> Add to Cart</label></p>
+                <div class="pic"><img src="images/sprocket.png" /></div>
+            </div>
+            <div>
+                <b>Thingy</b><br />
+                <p>Our Thingys have many uses, and people love them!</p>
+                <p>Such a deal at $1.99!</p>
+                <p><label><input type="checkbox" name="cart" value="Thingy" /> Add to Cart</label></p>
+                <div class="pic"><img src="images/thingy.png" /></div>
+            </div>
+        </div>
+
+            <h3>Shipping Info</h3>
             <div>
                 <label for="FirstName">First Name</label>:<br />
-                <input type="text" name="FirstName" id="FirstName" placeholder="First Name" required="required" autofocus />
+                <input type="text" name="First_Name" id="FirstName" placeholder="First Name" required="required" autofocus />
             </div>
             <div>
                 <label for="LastName">Last Name</label>:<br />
-                <input type="text" name="LastName" id="LastName" placeholder="Last Name" required="required" />
+                <input type="text" name="Last_Name" id="LastName" placeholder="Last Name" required="required" />
             </div>
             <div>
                 <label for="Email">Email</label>:<br />
@@ -48,27 +82,22 @@
                 </select>
             </div>
             <div>
-                <fieldset>
-                  <legend>Would You Like To Join Our Mailing List?</legend>
-                  <label><input type="radio" name="JoinMailingList" value="Yes" required="required"/> Yes</label><br />
-                  <label><input type="radio" name="JoinMailingList" value="No" /> No</label>
-                </fieldset>
+                <label for="City">City</label>:<br/>
+                <input type="text" name="City" id="City" placeholder="City" required="required" />
             </div>
+    
             <div>
-                <fieldset>
-                  <legend>What are you interested in?</legend>
-                  <label><input type="checkbox" name="InterestedIn" value="Website" /> Website</label><br />
-                  <label><input type="checkbox" name="InterestedIn" value="OnlineCalendar" /> Online Calendar</label><br />
-                  <label><input type="checkbox" name="InterestedIn" value="ContactForm" /> Contact Form</label><br />
-                  <label><input type="checkbox" name="InterestedIn" value="Lollipops" /> Complimentary Lollipops</label>
-                </fieldset>
+                <label for="Zip Code">Zip Code</label>:<br/>
+                <input type="text" name="Zip Code" id="Zip Code" placeholder="Zip Code" required="required" />
             </div>
-            <div>
-                <label for="Comments">Comments</label>:<br />
-                <textarea name="comments" placeholder="Your opinion is important to us" cols="36" rows="4"></textarea>
-            </div>
-            <div><input type="submit" value="Submit"/></div>
+    
+                <div>
+                <label for="Note">Note</label>:<br/>
+                    <textarea name="Note" cols="36" rows="4"></textarea>
+                </div>
+                <div><input type ="submit" /></div>
         </form>
+    </div>
      <footer>
       <p><small>&copy; 2021 by 
           Alan Nguyen, All Rights Reserved ~ 
@@ -77,6 +106,7 @@
      </p>
     </footer>
   </main>
+  <script src="js/data-processing.js"></script> 
   <script src="js/main.js"></script>    
  </body>
 </html>
